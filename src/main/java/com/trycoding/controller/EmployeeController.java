@@ -36,7 +36,7 @@ public class EmployeeController {
 		
 		int i = employeeDao.saveEmp(emp);
 		httpSession.setAttribute("msg", "Employee Added");
-		return "redirect:/addEmployee";
+		return "redirect:/employee/addEmployee";
 	}
 	
 	@RequestMapping(path="/editEmployee/{id}" )

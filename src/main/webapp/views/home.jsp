@@ -26,7 +26,7 @@
 							<tr>
 								<th scope="col">No</th>
 								<th scope="col">Name</th>
-								<th scope="col">Address</th>
+<!-- 								<th scope="col">Address</th> -->
 								<th scope="col">Email</th>
 								<th scope="col">Password</th>
 								<th scope="col">Designation</th>
@@ -39,7 +39,7 @@
 								<tr>
 									<th scope="col">${emp.id}</th>
 									<td>${emp.fullName}</td>
-									<td>${emp.address}</td>
+<%-- 									<td>${emp.address}</td> --%>
 									<td>${emp.email}</td>
 									<td>${emp.password}</td>
 									<td>${emp.designation}</td>

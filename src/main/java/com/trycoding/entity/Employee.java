@@ -1,9 +1,14 @@
 package com.trycoding.entity;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -17,7 +22,9 @@ public class Employee {
 	
 	private String fullName ;
 	
-	private String Address ; 
+
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private List<EmployeeAddress> addresses ; 
 	
 	private String email ;
 	
@@ -26,6 +33,20 @@ public class Employee {
 	private String designation ;
 	
 	private int salary ;
+	
+	
+
+	public Employee() {
+	}
+
+	public Employee(String fullName, String email, String password, String designation,
+			int salary) {
+		this.fullName = fullName;
+		this.email = email;
+		this.password = password;
+		this.designation = designation;
+		this.salary = salary;
+	}
 
 	public int getId() {
 		return id;
@@ -35,9 +56,6 @@ public class Employee {
 		return fullName;
 	}
 
-	public String getAddress() {
-		return Address;
-	}
 
 	public String getEmail() {
 		return email;
@@ -63,9 +81,6 @@ public class Employee {
 		this.fullName = fullName;
 	}
 
-	public void setAddress(String address) {
-		Address = address;
-	}
 
 	public void setEmail(String email) {
 		this.email = email;
@@ -82,6 +97,15 @@ public class Employee {
 	public void setSalary(int salary) {
 		this.salary = salary;
 	}
+
+	public List<EmployeeAddress> getAddresses() {
+		return addresses;
+	}
+
+	public void setAddresses(List<EmployeeAddress> addresses) {
+		this.addresses = addresses;
+	}
+
 	
 	
 	

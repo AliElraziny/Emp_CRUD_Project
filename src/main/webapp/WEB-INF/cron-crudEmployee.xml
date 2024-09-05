@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+  <bean id="cronAutoEmployeeInsertion"
+		class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject" ref="currencyClassifier" />
+		<property name="targetMethod" value="execute" />
+	</bean>
+	<bean id="cronAutoCurrencyTr"
+		class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="cronAutoEmployeeInsertion" />
+		<property name="cronExpression" value="0 */1 * * * ?" />
+	</bean>
+	
+	
+	
+	<bean id="currencyClassifier" class="com.trycoding.cron.AutoEmployeeInsertionUsingXml">
+		<property name="employeeService" ref="employeeServiceImpl" />		
+	</bean>
+   
+</beans>

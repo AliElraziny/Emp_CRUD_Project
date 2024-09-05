@@ -25,7 +25,7 @@
 						</c:if>
 					</div>
 					<div class="card-body">
-						<form action="employee/updateEmployee" method="post">
+						<form action="${pageContext.request.contextPath}/employee/updateEmployee" method="post">
 							<input class="form-control" name="id" type="hidden" 
 								value="${emp.id}">
 							<div class="mb-3">

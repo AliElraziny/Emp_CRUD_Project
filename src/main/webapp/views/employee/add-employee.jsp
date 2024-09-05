@@ -25,15 +25,19 @@
 						</c:if>
 					</div>
 					<div class="card-body">
-						<form action="employee/createEmployee" method="post">
+						<form action="${pageContext.request.contextPath}/employee/createEmployee" method="post">
 
 							<div class="mb-3">
 								<label class="form-label">Full Name</label><input
 									class="form-control" name="fullName" type="text">
 							</div>
 							<div class="mb-3">
-								<label class="form-label">Address</label><input
-									class="form-control" name="address" type="text">
+								<label class="form-label"> Address</label><input
+									class="form-control" name="addresses[0].name" type="text">
+							</div>
+							<div class="mb-3">
+								<label class="form-label">Second Address </label><input
+									class="form-control" name="addresses[1].name" type="text">
 							</div>
 
 							<div class="mb-3">
